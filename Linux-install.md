@@ -20,7 +20,7 @@ sudo apt-get install gtk3 webkit2gtk libusb
 
 ### 1.3 Red Hat / Fedora and its derivatives (Centos, Scientific Linux, ...)
 ```bash
-sudo yum install gtk3 webkit2gtk libusb
+sudo yum install gtk3 webkit2gtk3 libusb
 ```
 
 _Note: Feel free to open a PR with an update to the docs if you would like your distro listed above._
