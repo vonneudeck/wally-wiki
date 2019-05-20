@@ -6,6 +6,8 @@ In order to use Wally and flash your board on Linux, you need to:
 
 ## 1. Install the required dependencies.
 
+Note some distributions might already have these dependencies installed (ex: Ubuntu)
+
 Wally requires three dependencies to run properly: `gtk3`, `webkit2gtk` and `libusb`.
 
 ### 1.1 Arch and its derivatives (Manjaro, Antergox, ...)
@@ -15,7 +17,7 @@ sudo pacman -S gtk3 webkit2gtk libusb
 
 ### 1.2 Debian and its derivatives (Ubuntu, Kali, ...)
 ```bash
-sudo apt-get install gtk3 webkit2gtk libusb
+sudo apt-get install gtk+3.0 webkit2gtk-4.0 libusb-dev
 ```
 
 ### 1.3 Red Hat / Fedora and its derivatives (Centos, Scientific Linux, ...)
