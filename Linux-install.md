@@ -55,6 +55,6 @@ _Note: The snippet above defines rules for both the Ergodox EZ and the Planck EZ
 
 ## 3. Download the Wally binary and run it
 
-Download the latest "Linux 64" version from the [release page](https://github.com/zsa/wally/releases), make it executable (`chmod +x wally`) and execute it.
+Download the [latest linux version available from here](https://configure.ergodox-ez.com/wally/linux), make it executable (`chmod +x wally`) and execute it.
 
 Ran into an issue while following this guide? Feel free to [contact us](mailto:contact@ergodox-ez.com) and we'll help!
