@@ -11,7 +11,7 @@ Note some distributions might already have these dependencies installed (ex: Ubu
 Wally's GUI requires three dependencies to run properly: `gtk3`, `webkit2gtk` and `libusb`.
 If you plan to use the CLI version only, then only `libusb` is required.
 
-### 1.1 Arch and its derivatives (Manjaro, Antergox, ...)
+### 1.1 Arch and its derivatives (Manjaro, Antergos, ...)
 ```bash
 sudo pacman -S gtk3 webkit2gtk libusb
 ```
