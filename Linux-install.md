@@ -12,6 +12,7 @@ Wally's GUI requires three dependencies to run properly: `gtk3`, `webkit2gtk` an
 If you plan to use the CLI version only, then only `libusb` is required.
 
 ### 1.1 Arch and its derivatives (Manjaro, Antergos, ...)
+Note: There is an [Aur Package](https://aur.archlinux.org/packages/zsa-wally/) available now, courtesy of @synaptiko
 ```bash
 sudo pacman -S gtk3 webkit2gtk libusb
 ```
