@@ -1,4 +1,4 @@
-While low-level device communication is handled by the kernel, device-related events are managed in userspace by `udevd`. Custom `.rules` files can be defined in order to get access to those events without elevated privileges.
+While low-level device communication is handled by the kernel, device-related events are managed in userspace by `udevd`. Custom `.rules` files can be defined in order to get access to those events without elevated privileges.In order to use live training on Linux, follow these instructions: 
 
 In `/etc/udev/rules.d/` create a file named `50-oryx.rules`:
 ```bash
