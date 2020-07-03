@@ -22,3 +22,5 @@ $> sudo usermod -aG plugdev $USER
 Make sure to logout once after that.
 
 _Note: The snippet above defines rules for both the Ergodox EZ and the Planck EZ. Feel free to only copy the block relevant to you._
+
+**WARNING:** On Ubuntu and its derivatives, browsers are installed via snapd. In the Sofware Package gui, find your browser's page and click the "Permissions button", then tick the toggle "Access USB hardware directly" on
