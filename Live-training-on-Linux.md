@@ -8,9 +8,11 @@ sudo touch /etc/udev/rules.d/50-oryx.rules
 And paste the following configuration inside:
 
 ```conf
-# Rule for the Ergodox EZ Original / Shine / Glow
+# Rule for the Moonlander
+SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
+# Rule for the Ergodox EZ
 SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-# Rule for the Planck EZ Standard / Glow
+# Rule for the Planck EZ
 SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
 ```
 Make sure your user is part of the plugdev group (it might not be the default on some distros):
