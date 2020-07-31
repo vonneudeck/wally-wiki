@@ -19,7 +19,7 @@ sudo pacman -S gtk3 webkit2gtk libusb
 
 ### 1.2 Debian and its derivatives (Ubuntu, Kali, ...)
 ```bash
-sudo apt-get install gtk+3.0 webkit2gtk-4.0 libusb-dev
+sudo apt install gtk+3.0 libwebkit2gtk-4.0 libusb-dev
 ```
 
 ### 1.3 Red Hat / Fedora and its derivatives (Centos, Scientific Linux, ...)
