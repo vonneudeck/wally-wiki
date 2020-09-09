@@ -54,6 +54,14 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
 
 _Note: The snippet above defines rules for all ZSA's keyboards. Feel free to only copy the block relevant to you._
 
+Make sure your user is part of the plugdev group (it might not be the default on some distros):
+
+```
+$> sudo groupadd plugdev
+$> sudo usermod -aG plugdev $USER
+```
+Make sure to logout once after that.
+
 ## 3. Download the Wally binary and run it
 
 Download the [latest linux version available from here](https://configure.ergodox-ez.com/wally/linux), make it executable (`chmod +x wally`) and execute it.
