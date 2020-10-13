@@ -8,6 +8,8 @@ sudo touch /etc/udev/rules.d/50-oryx.rules
 And paste the following configuration inside:
 
 ```conf
+# Rule for all ZSA keyboards
+SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
 # Rule for the Moonlander
 SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
 # Rule for the Ergodox EZ
