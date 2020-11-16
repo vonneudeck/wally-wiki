@@ -17,9 +17,9 @@ Note: There is an [Aur Package](https://aur.archlinux.org/packages/zsa-wally/) a
 sudo pacman -S gtk3 webkit2gtk libusb
 ```
 
-### 1.2 Debian and its derivatives (Ubuntu, Kali, ...)
+### 1.2 Debian and its derivatives (Ubuntu, Kali, Mint, ...)
 ```bash
-sudo apt install gtk+3.0 libwebkit2gtk-4.0 libusb-dev
+sudo apt install libusb-dev
 ```
 
 ### 1.3 Red Hat / Fedora and its derivatives (Centos, Scientific Linux, ...)
