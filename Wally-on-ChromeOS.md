@@ -1,6 +1,8 @@
 ## Flashing your keyboard on ChromeOS.
 Please note that these steps will work on the Planck and Moonlander only. The Ergodox bootloader advertises itself as an HID device and ChromeOS doesn't forward HID devices to the Linux container.
 
+This will only work if your ChromeOS device [supports Linux](https://www.chromium.org/chromium-os/chrome-os-systems-supporting-linux).
+
 Thanks to [@drafcode](https://github.com/draftcode) for the instructions.
 
 ## Steps
