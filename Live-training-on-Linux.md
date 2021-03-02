@@ -23,7 +23,7 @@ Make sure your user is part of the plugdev group (it might not be the default on
 $> sudo groupadd plugdev
 $> sudo usermod -aG plugdev $USER
 ```
-Make sure to logout once after that.
+Make sure to logout once after that. If that doesn't do the trick, fully reboot your machine and try again.
 
 _Note: The snippet above defines rules for both the Ergodox EZ and the Planck EZ. Feel free to only copy the block relevant to you._
 
