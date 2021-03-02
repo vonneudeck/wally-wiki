@@ -60,7 +60,7 @@ Make sure your user is part of the plugdev group (it might not be the default on
 $> sudo groupadd plugdev
 $> sudo usermod -aG plugdev $USER
 ```
-Make sure to logout once after that.
+Make sure to logout once after that.  If that doesn't do the trick, fully reboot your machine and try again.
 
 ## 3. Download the Wally binary and run it
 
