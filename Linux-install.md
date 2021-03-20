@@ -6,7 +6,7 @@ In order to use Wally and flash your board on Linux, you need to:
 
 ## 1. Install the required dependencies.
 
-Note some distributions might already have these dependencies installed (ex: Ubuntu)
+Note some distributions might already have these dependencies installed (ex: Ubuntu, Fedora Silverblue 33)
 
 Wally's GUI requires three dependencies to run properly: `gtk3`, `webkit2gtk` and `libusb`.
 If you plan to use the CLI version only, then only `libusb` is required.
@@ -40,30 +40,31 @@ sudo touch /etc/udev/rules.d/50-wally.rules
 And paste the following configuration inside:
 
 ```conf
-# Teensy rules for the Ergodox EZ
-ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
-ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
-KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+# Rule for the Moonlander
+SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", TAG+="uaccess", TAG+="udev-acl"
+# Rule for the Ergodox EZ, Planck EZ
+SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307|6060", TAG+="uaccess", TAG+="udev-acl"
+```
 
+Some (e.g. Fedora Silverblue 33) but not all distributions need this additional rule when flashing the Moolander or Planck EZ:
+
+```conf
 # STM32 rules for the Moonlander and Planck EZ
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
-    MODE:="0666", \
-    SYMLINK+="stm32_dfu"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", TAG+="uaccess", TAG+="udev-acl"
 ```
 
 _Note: The snippet above defines rules for all ZSA's keyboards. Feel free to only copy the block relevant to you._
 
-Make sure your user is part of the plugdev group (it might not be the default on some distros):
+Restart udev so that the new rules are loaded:
 
-```
-$> sudo groupadd plugdev
-$> sudo usermod -aG plugdev $USER
-```
-Make sure to logout once after that.  If that doesn't do the trick, fully reboot your machine and try again.
+`sudo udevadm control --reload-rules && sudo udevadm trigger`
+
+Finally, unplug and plug back in the keyboard to ensure that the new rules take effect.
 
 ## 3. Download the Wally binary and run it
 
-Download the [latest linux version available from here](https://configure.ergodox-ez.com/wally/linux), make it executable (`chmod +x wally`) and execute it.
+Download the [latest linux version available from here](https://configure.ergodox-ez.com/wally/linux), make it executable (`chmod +x wally`) and execute it with `./wally`
+
+If the internal log in the app (click on the little terminal logo in lower left to see it) reads `OpenDevices: libusb: bad access [code -3]` you forgot to use `sudo` to run wally.
 
 Ran into an issue while following this guide? Feel free to [contact us](mailto:contact@ergodox-ez.com) and we'll help!
